@@ -1,22 +1,19 @@
 [project]
 name = "st-dialog-close-detector"
 version = "0.1.0"
-description = "Add your description here"
+description = "rerun streamlit app when dialog is closed"
 readme = "README.md"
-authors = [
-    { name = "Kelvin Ng", email = "hoishing@gmail.com" }
-]
+authors = [{ name = "Kelvin Ng", email = "hoishing@gmail.com" }]
 requires-python = ">=3.12"
-dependencies = [
-    "streamlit>=1.44.1",
-]
+dependencies = ["streamlit>=1.44.1"]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = [
-    "pytest>=8.3.5",
-    "watchdog>=6.0.0",
-]
+dev = ["pytest>=8.3.5", "pytest-playwright>=0.7.0", "watchdog>=6.0.0"]
+
+[tool.ruff]
+isort.no-sections = true
+extend-ignore = ["E203", "E402", "E501", "E712", "F401", "F811"]

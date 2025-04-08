@@ -17,6 +17,5 @@ observer.observe(parent.document.getElementById("root"), {
   subtree: true,
 });
 
-Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, onRender);
 Streamlit.setComponentReady();
 Streamlit.setFrameHeight(0);
