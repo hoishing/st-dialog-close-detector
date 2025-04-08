@@ -1,24 +1,28 @@
 # Streamlit Dialog Close Detector
 
-> rerun streamlit app when dialog is closed
+> Automatically rerun Streamlit app when a dialog is closed
 
 ## The Problem
 
-As of Streamlit v1.44, the official `st.dialog` won't be able to trigger app rerun if the user close the dialog by clicking outside the dialog or pressing escape key.
+As of Streamlit v1.44, the official `st.dialog` component cannot trigger an app rerun when users close the dialog by either clicking outside the dialog or pressing the escape key.
 
-We can add a button inside the dialog to trigger rerun though, it will be nice if all widget states inside the dialog are automatically reflected on the main app when the dialog is closed, ie. app auto rerun when the dialog is close.
+While we can add a button inside the dialog to trigger a rerun, it would be more convenient if all widget states inside the dialog were automatically reflected in the main app when the dialog closes - meaning the app would automatically rerun upon dialog closure.
 
 ## The Solution
 
-Use custom component to inject javacript for detecting the close of the dialog, and update the value of the custom component. The value update will automatically trigger an app rerun.
+This component injects JavaScript to detect when a dialog is closed and updates the value of a custom component. This value update automatically triggers an app rerun.
 
 ## Usage
 
-- installation
+### Installation
 
-`uv add st-dialog-close-detector`
+```bash
+uv add st-dialog-close-detector
+```
 
-- put it **anywhere** in your main stremlit app
+### Implementation
+
+Add the component **anywhere** in your Streamlit app:
 
 ```python
 from st_dialog_close_detector import dialog_close_detector
