@@ -70,3 +70,5 @@ bun.lock
 
 # frontend
 !**/frontend/dist/
+pnpm-lock.yaml
+uv.lock
